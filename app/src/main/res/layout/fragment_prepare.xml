@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorButtonNormal"
+    tools:context="com.research.andrade.andar.Prepare"
+    tools:ignore="uselessParent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:contentDescription="@string/Earthquake"
+                    android:src="@drawable/earthquake"
+                    android:scaleType="fitXY"
+                    android:id="@+id/btnEarthquake"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    style="?android:attr/buttonBarStyle"
+                    />
+
+                <ImageButton
+                    android:contentDescription="@string/Flood"
+                    android:src="@drawable/flood"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnFlood"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    style="?android:attr/buttonBarStyle"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:contentDescription="@string/Typhoon"
+                    android:src="@drawable/typhoon"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnTyphoon"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    style="?android:attr/buttonBarStyle"
+                   />
+
+                <ImageButton
+                    android:contentDescription="@string/Volcano"
+                    android:src="@drawable/volcano"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnVolcano"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    style="?android:attr/buttonBarStyle"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageButton
+                    android:contentDescription="@string/Fire"
+                    android:src="@drawable/fire"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnFire"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    style="?android:attr/buttonBarStyle"
+                    />
+
+                <ImageButton
+                    android:contentDescription="@string/Landslide"
+                    android:src="@drawable/landslide"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnLandslide"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    style="?android:attr/buttonBarStyle"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:contentDescription="@string/Tsunami"
+                    android:src="@drawable/tsunami"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/buttonDisaster"
+                    android:layout_height="@dimen/buttonDisaster"
+                    android:id="@+id/btnTsunami"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    style="?android:attr/buttonBarStyle"
+
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

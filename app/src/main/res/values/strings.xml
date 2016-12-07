@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ANDAR</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="BatterySavingMode">Battery Saving Mode</string>
+    <string name="Flashlight">Flashlight</string>
+    <string name="ScreenFlashlight">Screen as Flashlight</string>
+    <string name="StrobeFlashlight">Strobe Flashlight</string>
+    <string name="Alarm">Alarm</string>
+    <string name="MessageContacts">  Message Contacts</string>
+    <string name="EmergencyContacts">Emergency Contacts</string>
+    <string name="CallAuthority">Call Authority</string>
+    <string name="Tracker">Tracker</string>
+    <string name="MessageLog">Message Logs</string>
+    <string name="CallLogs">Call Logs</string>
+    <string name="WeatherLog">Weather Logs</string>
+    <string name="References">References</string>
+    <string name="AboutUs">About Us</string>
+    <string name="Exit">Exit</string>
+    <string name="Earthquake">Earthquake</string>
+    <string name="Flood">Flood</string>
+    <string name="Typhoon">Typhoon</string>
+    <string name="Volcano">Volcano</string>
+    <string name="Fire">Fire</string>
+    <string name="Landslide">Landslide</string>
+    <string name="Tsunami">Tsunami</string>
+    <string name="Immediately">I need HELP IMMEDIATELY</string>
+    <string name="Possible">I\'m Ok, but need help when possible</string>
+    <string name="Okay">I\'m Ok</string>
+    <string name="QRCodeScanner">QR Code Scanner</string>
+    <string name="MyQrCode">My QR Code</string>
+    <string name="CreateNewQR">Create New QR Code</string>
+</resources>
