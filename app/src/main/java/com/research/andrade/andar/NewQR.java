@@ -44,10 +44,7 @@ public class NewQR extends AppCompatActivity {
         name = (EditText) findViewById(R.id.edtName);
         address = (EditText) findViewById(R.id.edtAddress);
         others = (EditText) findViewById(R.id.edtOthers);
-        img = (ImageView) findViewById(R.id.imageView3);
-
-
-
+        
         gen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

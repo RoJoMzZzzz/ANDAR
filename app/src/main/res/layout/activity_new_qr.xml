@@ -26,36 +26,49 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/edtName"
-        android:hint="Full Name" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/edtAddress"
-        android:hint="Address" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/edtOthers"
-        android:layout_weight="0.47"
-        android:hint="Any Informations You want to Include" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtName"
+            android:hint="Full Name" />
 
-    <Button
-        android:text="Generate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnGenQR2" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtAddress"
+            android:hint="Address" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/edtOthers"
+            android:layout_weight="0.47"
+            android:hint="Any Informations You want to Include" />
+
+        <Button
+            android:text="Generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnGenQR2" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
