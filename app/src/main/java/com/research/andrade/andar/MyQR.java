@@ -53,9 +53,16 @@ public class MyQR extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(MyQR.this,MainActivity.class));
+        super.onBackPressed();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             MyQR.this.finish();
+            startActivity(new Intent(MyQR.this,MainActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

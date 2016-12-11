@@ -34,4 +34,10 @@ public class ScanQR extends AppCompatActivity implements ZXingScannerView.Result
 
         mScannerView.resumeCameraPreview(this);
     }
+
+    @Override
+    public void onBackPressed() {
+        mScannerView.stopCamera();
+        super.onBackPressed();
+    }
 }

@@ -1,15 +1,9 @@
 package com.research.andrade.andar;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.hardware.Camera;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,9 +19,7 @@ public class Emergency extends Fragment {
 
     private Switch savingMode, flashlight, strobeFlashlight, screenFlashlight, alarm;
     private Button messageContacts, emergencyContacts, callAuthority, angQRnaIto;
-    private Camera camera;
-    private Boolean isLightOn;
-    private Camera.Parameters p;
+    private MediaPlayer mp;
 
     public Emergency() {
         // Required empty public constructor
@@ -50,9 +42,7 @@ public class Emergency extends Fragment {
         callAuthority = (Button) view.findViewById(R.id.btnCall);
         angQRnaIto = (Button) view.findViewById(R.id.btnQRCode);
 
-        /*checkCamera();
-        getCamera();
-        checkSwitches();*/
+        //checkSwitches();
 
         angQRnaIto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +56,13 @@ public class Emergency extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(),MessageContact.class));
+            }
+        });
+
+        emergencyContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),EmergencyContacts.class));
             }
         });
 
@@ -119,42 +116,19 @@ public class Emergency extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (alarm.isChecked()) {
                     savingMode.setChecked(false);
-                    Toast.makeText(getActivity(), "Alarm", Toast.LENGTH_SHORT).show();
+                    PlayAlarm();
+                } else if (alarm.isChecked() == false) {
+                    mp.stop();
                 }
+
             }
         });
 
         return view;
     }
 
-    public void checkCamera() {
-        Context ctx = getActivity();
-
-        boolean hasFlash = ctx.getPackageManager()
-                .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
-
-        if (!hasFlash) {
-
-            flashlight.setEnabled(false);
-            strobeFlashlight.setEnabled(false);
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage("Flashlight not supported!")
-                    .setCancelable(true)
-                    .setTitle("Error")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            AlertDialog alert = builder.create();
-            alert.show();
-
-        }
-    }
-
-
     public void checkSwitches() {
-        /*if (savingMode.isChecked()) {
+        if (savingMode.isChecked()) {
             alarm.setChecked(false);
             Toast.makeText(getActivity(), "Battery Saving Mode", Toast.LENGTH_SHORT).show();
         }
@@ -162,21 +136,20 @@ public class Emergency extends Fragment {
         if (flashlight.isChecked()) {
             screenFlashlight.setChecked(false);
             strobeFlashlight.setChecked(false);
-            turnOnFlash();
         }
 
         if (flashlight.isChecked()== false) {
-            turnOffFlash();
+
         }
 
         if (strobeFlashlight.isChecked()) {
             flashlight.setChecked(false);
             screenFlashlight.setChecked(false);
-            BlinkFlash();
+
         }
 
         if (strobeFlashlight.isChecked()== false) {
-            turnOffFlash();
+
         }
 
         if (screenFlashlight.isChecked()) {
@@ -187,110 +160,21 @@ public class Emergency extends Fragment {
 
         if (alarm.isChecked()) {
             savingMode.setChecked(false);
-            Toast.makeText(getActivity(), "Alarm", Toast.LENGTH_SHORT).show();
+            PlayAlarm();
         }
-        */
 
-    }
-
-    // getting camera parameters
-    private void getCamera() {
-        if (camera == null) {
-            try {
-                camera = Camera.open();
-                p = camera.getParameters();
-            } catch (RuntimeException e) {
-                Toast.makeText(getActivity(),""+e,Toast.LENGTH_LONG).show();
-            }
+        if (alarm.isChecked()== false) {
+            mp.stop();
         }
+
+
     }
 
-
-    public void turnOnFlash(){
-        if (!isLightOn) {
-            if (camera == null || p == null) {
-                return;
-            }
-        p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-        camera.setParameters(p);
-        camera.startPreview();
-        isLightOn = true;
-
-        }
+    private void PlayAlarm() {
+        mp = MediaPlayer.create(getActivity(), R.raw.alarm);
+        mp.setLooping(true);
+        mp.start();
     }
 
-    public void turnOffFlash(){
-        if (isLightOn) {
-            if (camera == null || p == null) {
-                return;
-            }
-        p.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-        camera.setParameters(p);
-        camera.stopPreview();
-        camera.setPreviewCallback(null);
-        isLightOn = false;
-        }
-    }
-
-    private void BlinkFlash(){
-        String myString = "010101010101";
-        long blinkDelay = 50; //Delay in ms
-        for (int i = 0; i < myString.length(); i++) {
-            if (myString.charAt(i) == '0') {
-                p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                camera.setParameters(p);
-                camera.startPreview();
-                isLightOn = true;
-
-            } else {
-                p.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                camera.setParameters(p);
-                camera.stopPreview();
-                isLightOn = false;
-
-            }
-            try {
-                Thread.sleep(blinkDelay);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /*@Override
-    public void onStart() {
-        super.onStart();
-        getCamera();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        turnOffFlash();
-    }
-
-    *//*@Override
-    public void onResume() {
-        super.onResume();
-        if (isLightOn) {
-            turnOnFlash();
-        } else
-            turnOffFlash();
-
-    }*//*
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (camera != null) {
-            camera.release();
-            camera = null;
-        }
-    }*/
 }
 
