@@ -31,4 +31,5 @@
     <string name="QRCodeScanner">QR Code Scanner</string>
     <string name="MyQrCode">My QR Code</string>
     <string name="CreateNewQR">Create New QR Code</string>
+    <string name="AddNewEmCont">Add New Emergency Contact</string>
 </resources>
