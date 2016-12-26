@@ -16,6 +16,7 @@
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,7 +25,8 @@
         <activity android:name=".MyQR" />
         <activity android:name=".NewQR" />
         <activity android:name=".ScanQR" />
-        <activity android:name=".EmergencyContacts"></activity>
+        <activity android:name=".EmergencyContacts" />
+        <activity android:name=".EditEmergencyContacts"></activity>
     </application>
 
 </manifest>

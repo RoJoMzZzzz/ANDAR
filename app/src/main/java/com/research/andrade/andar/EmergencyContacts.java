@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,7 +28,9 @@ public class EmergencyContacts extends AppCompatActivity {
     private ArrayList<String> listItems=new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private static final int PICK_CONTACT = 10;
-    private FloatingActionButton myFab;
+    private EditText contEdt;
+    private ImageButton addContBtn;
+    private Button addFrmPhBtn;
 
 
     @Override
@@ -39,16 +44,33 @@ public class EmergencyContacts extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Database db = new Database(this);
+        final Database db = new Database(this);
 
-        myFab = (FloatingActionButton) findViewById(R.id.fabAddEmCont);
-        myFab.setOnClickListener(new View.OnClickListener() {
+        contEdt = (EditText)findViewById(R.id.edtAddCont);
+        addContBtn = (ImageButton)findViewById(R.id.imgBtnAddCont);
+        addFrmPhBtn = (Button)findViewById(R.id.btnAddFrPhone);
+
+        addFrmPhBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
                 startActivityForResult(intent, PICK_CONTACT);
             }
         });
+
+        addContBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean insCont = db.insertContact(contEdt.getText().toString(), contEdt.getText().toString());
+                if(insCont)
+                    Toast.makeText(EmergencyContacts.this, "inserted", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(EmergencyContacts.this, "not inserted", Toast.LENGTH_LONG).show();
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
 
         Cursor res = db.getAllContact();
         adapter=new ArrayAdapter<String>(this,
@@ -56,7 +78,7 @@ public class EmergencyContacts extends AppCompatActivity {
                 listItems);
 
         while (res.moveToNext()){
-            listItems.add(res.getString(0));
+            listItems.add(res.getString(0)+"\n\t"+res.getString(1));
             adapter.notifyDataSetChanged();
         }
 
@@ -66,6 +88,11 @@ public class EmergencyContacts extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(EmergencyContacts.this, listItems.get(i), Toast.LENGTH_SHORT).show();
+
+                Intent editCont = new Intent(EmergencyContacts.this, EditEmergencyContacts.class);
+                editCont.putExtra("data", listItems.get(i));
+                startActivity(editCont);
+
             }
         });
 

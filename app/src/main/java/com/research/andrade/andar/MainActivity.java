@@ -121,9 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void exitApp(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Exit?");
+        alertDialogBuilder.setTitle("Exit Aapplication");
         alertDialogBuilder
-                .setMessage("Exit this application?")
+                .setMessage("Are you sure you want to exit the application?")
                 .setCancelable(false)
                 .setPositiveButton("No",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
