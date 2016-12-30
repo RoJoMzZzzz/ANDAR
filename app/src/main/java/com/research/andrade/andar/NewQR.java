@@ -24,7 +24,7 @@ public class NewQR extends AppCompatActivity {
 
     private Toolbar toolbar;
     private Button gen;
-    private EditText name,address,others;
+    private EditText name,address,others,bday;
     private ImageView img;
 
     @Override
@@ -44,12 +44,13 @@ public class NewQR extends AppCompatActivity {
         name = (EditText) findViewById(R.id.edtName);
         address = (EditText) findViewById(R.id.edtAddress);
         others = (EditText) findViewById(R.id.edtOthers);
+        bday = (EditText) findViewById(R.id.edtBday);
         
         gen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 db.deleteMyQr();
-                String text2Qr = name.getText().toString() +"\n"+address.getText().toString() +"\n"+others.getText().toString();
+                String text2Qr = name.getText().toString() +"\n"+address.getText().toString() +"\n"+bday.getText().toString() +"\n"+others.getText().toString();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try {
                     BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE,200,200);

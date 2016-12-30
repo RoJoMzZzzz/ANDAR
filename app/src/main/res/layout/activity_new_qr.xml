@@ -51,7 +51,15 @@
             android:id="@+id/edtAddress"
             android:hint="Address" />
 
-        <EditText
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/edtBday"
+                android:hint="Birthday" />
+
+            <EditText
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:inputType="textMultiLine"

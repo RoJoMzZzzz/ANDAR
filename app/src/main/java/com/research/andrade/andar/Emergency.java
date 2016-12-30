@@ -42,7 +42,14 @@ public class Emergency extends Fragment {
         callAuthority = (Button) view.findViewById(R.id.btnCall);
         angQRnaIto = (Button) view.findViewById(R.id.btnQRCode);
 
-        //checkSwitches();
+
+
+        /*if (alarm.isChecked()) {
+            PlayAlarm();
+        }
+        else {
+            mp.stop();
+        }*/
 
         angQRnaIto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,10 +121,10 @@ public class Emergency extends Fragment {
         alarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (alarm.isChecked()) {
+                if (b) {
                     savingMode.setChecked(false);
                     PlayAlarm();
-                } else if (alarm.isChecked() == false) {
+                } else {
                     mp.stop();
                 }
 
@@ -127,48 +134,6 @@ public class Emergency extends Fragment {
         return view;
     }
 
-    public void checkSwitches() {
-        if (savingMode.isChecked()) {
-            alarm.setChecked(false);
-            Toast.makeText(getActivity(), "Battery Saving Mode", Toast.LENGTH_SHORT).show();
-        }
-
-        if (flashlight.isChecked()) {
-            screenFlashlight.setChecked(false);
-            strobeFlashlight.setChecked(false);
-        }
-
-        if (flashlight.isChecked()== false) {
-
-        }
-
-        if (strobeFlashlight.isChecked()) {
-            flashlight.setChecked(false);
-            screenFlashlight.setChecked(false);
-
-        }
-
-        if (strobeFlashlight.isChecked()== false) {
-
-        }
-
-        if (screenFlashlight.isChecked()) {
-            flashlight.setChecked(false);
-            strobeFlashlight.setChecked(false);
-            Toast.makeText(getActivity(), "Screen Flashlight", Toast.LENGTH_SHORT).show();
-        }
-
-        if (alarm.isChecked()) {
-            savingMode.setChecked(false);
-            PlayAlarm();
-        }
-
-        if (alarm.isChecked()== false) {
-            mp.stop();
-        }
-
-
-    }
 
     private void PlayAlarm() {
         mp = MediaPlayer.create(getActivity(), R.raw.alarm);
