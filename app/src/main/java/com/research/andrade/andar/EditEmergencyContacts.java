@@ -8,12 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditEmergencyContacts extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText dispNameEdt, contNumEdt;
     private Button saveBtn, delBtn, cancBtn;
+    private String disp, num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +28,15 @@ public class EditEmergencyContacts extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        final Database db = new Database(this);
+
         dispNameEdt = (EditText) findViewById(R.id.edtDispName);
         contNumEdt = (EditText) findViewById(R.id.edtContNum);
         saveBtn = (Button) findViewById(R.id.btnSaveCont);
         delBtn = (Button) findViewById(R.id.btnDelCont);
         cancBtn = (Button) findViewById(R.id.btnCancelCont);
+
+
 
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
@@ -41,6 +47,9 @@ public class EditEmergencyContacts extends AppCompatActivity {
         dispNameEdt.setText(data1);
         contNumEdt.setText(data2);
 
+        disp = dispNameEdt.getText().toString();
+        num = contNumEdt.getText().toString();
+
         cancBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,8 +57,54 @@ public class EditEmergencyContacts extends AppCompatActivity {
             }
         });
 
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!disp.equals(dispNameEdt.getText().toString())&& num.equals(contNumEdt.getText().toString())) {
+                    Toast.makeText(getApplicationContext(),"nagbago ang pangalan",Toast.LENGTH_SHORT).show();
+
+                    boolean isupdate = db.updateDataEmContDisp(dispNameEdt.getText().toString(), contNumEdt.getText().toString());
+                    if (isupdate==true){
+                        Toast.makeText(getApplicationContext(),"Data updated", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(EditEmergencyContacts.this,EmergencyContacts.class));
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Data not Updated",Toast.LENGTH_LONG).show();
+                    }
+
+                } else if (disp.equals(dispNameEdt.getText().toString())&& !num.equals(contNumEdt.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"nagbago ang numero",Toast.LENGTH_SHORT).show();
+                    boolean isupdate = db.updateDataEmContNum(dispNameEdt.getText().toString(), contNumEdt.getText().toString());
+                    if (isupdate==true){
+                        Toast.makeText(getApplicationContext(),"Data updated", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(EditEmergencyContacts.this,EmergencyContacts.class));
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Data not Updated",Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),"walang binago",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer isDelete=db.deleteDataEmCont(contNumEdt.getText().toString());
+                if (isDelete>0){
+                    Toast.makeText(EditEmergencyContacts.this, "Deleted", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(EditEmergencyContacts.this,EmergencyContacts.class));
+                }
+                else {
+                    Toast.makeText(EditEmergencyContacts.this, "NOt Deleted", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

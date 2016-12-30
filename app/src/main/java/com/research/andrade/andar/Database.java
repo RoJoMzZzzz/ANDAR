@@ -76,5 +76,32 @@ public class Database extends SQLiteOpenHelper {
         return res;
     }
 
+    public Integer deleteDataEmCont(String cont){
+
+        SQLiteDatabase dbName = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EmContCol2, cont);
+        return dbName.delete(EmContTableName, "number=?", new String[]{cont});
+
+    }
+
+    public boolean updateDataEmContDisp (String d, String n){
+        SQLiteDatabase dbName = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EmContCol1,d);
+        contentValues.put(EmContCol2,n);
+        dbName.update(EmContTableName,contentValues, "number = ?", new String[] {n});
+        return true;
+    }
+
+    public boolean updateDataEmContNum (String d, String n){
+        SQLiteDatabase dbName = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EmContCol1,d);
+        contentValues.put(EmContCol2,n);
+        dbName.update(EmContTableName,contentValues, "name = ?", new String[] {d});
+        return true;
+    }
+
 
 }

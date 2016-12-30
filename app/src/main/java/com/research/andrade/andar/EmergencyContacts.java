@@ -32,7 +32,6 @@ public class EmergencyContacts extends AppCompatActivity {
     private ImageButton addContBtn;
     private Button addFrmPhBtn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +49,7 @@ public class EmergencyContacts extends AppCompatActivity {
         addContBtn = (ImageButton)findViewById(R.id.imgBtnAddCont);
         addFrmPhBtn = (Button)findViewById(R.id.btnAddFrPhone);
 
+
         addFrmPhBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,13 +61,22 @@ public class EmergencyContacts extends AppCompatActivity {
         addContBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean insCont = db.insertContact(contEdt.getText().toString(), contEdt.getText().toString());
-                if(insCont)
-                    Toast.makeText(EmergencyContacts.this, "inserted", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(EmergencyContacts.this, "not inserted", Toast.LENGTH_LONG).show();
-                finish();
-                startActivity(getIntent());
+
+                if(contEdt.getText().toString().equals("") || contEdt.getText().toString().equals(" ")){
+
+                    contEdt.setError("This item can't be empty");
+
+                } else {
+
+
+                    boolean insCont = db.insertContact(contEdt.getText().toString(), contEdt.getText().toString());
+                    if (insCont)
+                        Toast.makeText(EmergencyContacts.this, "inserted", Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(EmergencyContacts.this, "not inserted", Toast.LENGTH_LONG).show();
+                    finish();
+                    startActivity(getIntent());
+                }
             }
         });
 
@@ -137,6 +146,19 @@ public class EmergencyContacts extends AppCompatActivity {
                     }
                 }
         }
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        adapter.notifyDataSetChanged();
     }
 
     @Override

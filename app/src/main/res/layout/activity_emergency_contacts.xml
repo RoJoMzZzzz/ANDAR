@@ -62,7 +62,8 @@
         android:id="@+id/btnAddFrPhone"
         android:background="@color/zxing_transparent"
         android:textColor="@color/colorPrimary"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:textStyle="normal|italic" />
 
     <TextView
         android:text="@string/EmergencyContacts"
