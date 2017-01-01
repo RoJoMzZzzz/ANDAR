@@ -26,10 +26,14 @@
         <activity android:name=".NewQR" />
         <activity android:name=".ScanQR" />
         <activity android:name=".EmergencyContacts" />
-        <activity android:name=".EditEmergencyContacts"></activity>
+        <activity android:name=".EditEmergencyContacts" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="101cb6b80263147729dc93e0fad2790cdb81c9c8" />
+
+        <activity android:name=".EmbeddedTimelineActivity" />
+        <activity android:name=".EmbeddedTweetActivity"></activity>
     </application>
 
 </manifest>

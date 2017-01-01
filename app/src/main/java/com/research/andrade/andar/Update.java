@@ -1,22 +1,32 @@
 package com.research.andrade.andar;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SearchView;
 
-import com.twitter.sdk.android.core.*;
-import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.tweetui.*;
+import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
+import com.twitter.sdk.android.tweetui.UserTimeline;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Update extends Fragment {
+
+    private EditText hanap;
+    private ListView tweetsLv;
 
 
     public Update() {
@@ -31,24 +41,38 @@ public class Update extends Fragment {
         View v = inflater.inflate(R.layout.fragment_update, container, false);
 
 
-        // TODO: Use a more specific parent
-        final ViewGroup parentView = (ViewGroup) getActivity().getWindow().getDecorView().getRootView();
-        // TODO: Base this Tweet ID on some data from elsewhere in your app
-        long tweetId = 631879971628183552L;
-        TweetUtils.loadTweet(tweetId, new Callback<Tweet>() {
+        hanap = (EditText) v.findViewById(R.id.svTweets);
+        tweetsLv = (ListView) v.findViewById(R.id.lvTweets);
+
+        final UserTimeline userTimeline = new UserTimeline.Builder()
+                .screenName("dost_pagasa")
+                .build();
+        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
+                .setTimeline(userTimeline)
+                .build();
+
+        tweetsLv.setAdapter(adapter);
+        tweetsLv.setTextFilterEnabled(true);
+        hanap.addTextChangedListener(new TextWatcher() {
             @Override
-            public void success(Result<Tweet> result) {
-                TweetView tweetView = new TweetView(getActivity(), result.data);
-                parentView.addView(tweetView);
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
+
             @Override
-            public void failure(TwitterException exception) {
-                Log.d("TwitterKit", "Load Tweet failure", exception);
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //adapter.getFilter().filter(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
 
         return v;
     }
+
 
 }
