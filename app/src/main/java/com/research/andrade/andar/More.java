@@ -15,7 +15,7 @@ import android.widget.Button;
  */
 public class More extends Fragment {
 
-    private Button scanQrClass;
+    private Button scanQrClass, tracker;
 
     public More() {
         // Required empty public constructor
@@ -28,11 +28,19 @@ public class More extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_more, container, false);
         scanQrClass = (Button) view.findViewById(R.id.btnQrCodeScanner);
+        tracker = (Button) view.findViewById(R.id.btnTracker);
 
         scanQrClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(),ScanQR.class));
+            }
+        });
+
+        tracker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),MapsActivity.class));
             }
         });
 

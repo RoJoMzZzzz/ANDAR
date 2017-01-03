@@ -1,6 +1,5 @@
 package com.research.andrade.andar;
 
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +16,7 @@ public class MessageContact extends AppCompatActivity {
     private Button fetch, immediately, possible, ok;
     private TrackGPS gps;
     double longitude, latitude;
-    private String message, latis, longis;
+    private String message, myLoc="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +77,7 @@ public class MessageContact extends AppCompatActivity {
             latitude = gps .getLatitude();
             lati.setText("Latitude: "+latitude);
             longi.setText("Longitude: "+longitude);
+            myLoc = "";
         }
         else
             gps.showSettingsAlert();
