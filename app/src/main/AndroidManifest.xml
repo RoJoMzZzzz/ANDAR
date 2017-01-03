@@ -3,9 +3,11 @@
     package="com.research.andrade.andar">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
 
     <application
         android:allowBackup="true"
@@ -32,8 +34,6 @@
             android:name="io.fabric.ApiKey"
             android:value="101cb6b80263147729dc93e0fad2790cdb81c9c8" />
 
-        <activity android:name=".EmbeddedTimelineActivity" />
-        <activity android:name=".EmbeddedTweetActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
