@@ -8,6 +8,7 @@
     tools:context="com.research.andrade.andar.MessageContact"
     android:orientation="vertical">
 
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
@@ -25,49 +26,126 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
     <TextView
-        android:text="TextView"
+        android:text="My Coordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+         />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:text="Latitude: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt"
+            android:layout_marginLeft="5dp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text=" ? "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtLat"
+            android:layout_marginLeft="5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:text="Longitude: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt1"
+            android:layout_marginLeft="5dp"
+            android:textStyle="normal|bold" />
+
+
+    <TextView
+        android:text=" ? "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtLong"
-         />
+        android:layout_marginLeft="5dp" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLat"
-         />
+    </LinearLayout>
+
 
     <Button
         android:text="GET COORDINATES"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnFetch"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:padding="8dp" />
 
-    <Button
-        android:text="@string/Immediately"
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnImmediately"
-        android:background="@android:color/holo_red_light"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp">
+
+        <RadioButton
+            android:text="@string/Immediately"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoImmediately"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp" />
+
+        <RadioButton
+            android:text="@string/Possible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoPossible"
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_dark"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp" />
+
+        <RadioButton
+            android:text="@string/Okay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoOkay"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:padding="8dp"
+            android:layout_marginBottom="5dp" />
+    </RadioGroup>
 
     <Button
-        android:text="@string/Possible"
+        android:text="Send Message To Emergency Contacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnPossible"
-        android:background="#feaa0c"
-        android:layout_margin="10dp" />
+        android:id="@+id/btnSend"
+        android:layout_margin="10dp"
+        android:padding="8dp" />
 
-    <Button
-        android:text="@string/Okay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnOk"
-        android:background="@android:color/holo_green_light"
-        android:layout_margin="10dp" />
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -28,21 +28,27 @@
         android:layout_width="match_parent"
         android:id="@+id/edtLati"
         android:hint="Input Latitude"
-        android:inputType="number|numberSigned|numberDecimal" />
+        android:inputType="number|numberSigned|numberDecimal"
+        android:padding="8dp"
+        android:layout_margin="5dp" />
 
     <EditText
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/edtLongi"
         android:hint="Input Longitude"
-        android:inputType="number|numberSigned|numberDecimal" />
+        android:inputType="number|numberSigned|numberDecimal"
+        android:padding="8dp"
+        android:layout_margin="5dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find"
+        android:text="Locate My Friend"
         android:id="@+id/btnFind"
-        />
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_vertical|center_horizontal" />
 
     <fragment
         xmlns:map="http://schemas.android.com/apk/res-auto"
