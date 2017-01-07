@@ -6,17 +6,21 @@
     android:id="@+id/drawer_design_support_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.research.andrade.andar.MainActivity">
+    tools:context="com.research.andrade.andar.MainActivity"
+    android:fitsSystemWindows="true"
+    >
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         >
 
         <android.support.v7.widget.Toolbar
@@ -32,15 +36,18 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabSelectedTextColor="?android:attr/colorBackground"
             app:tabMode="fixed"
             app:tabGravity="fill"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:tabIndicatorColor="?android:attr/editTextColor" />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
     </android.support.design.widget.CoordinatorLayout>
 </android.support.v4.widget.DrawerLayout>
