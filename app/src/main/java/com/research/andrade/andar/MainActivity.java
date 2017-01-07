@@ -121,22 +121,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void exitApp(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Exit Aapplication");
         alertDialogBuilder
                 .setMessage("Are you sure you want to exit the application?")
                 .setCancelable(false)
-                .setPositiveButton("No",new DialogInterface.OnClickListener() {
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         dialog.cancel();
                     }
                 })
-                .setNegativeButton("Yes",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         System.exit(0);
                     }
                 });
 
         AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setTitle("Exit Aapplication");
         alertDialog.show();
     }
 

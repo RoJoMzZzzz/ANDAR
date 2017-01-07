@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     </android.support.design.widget.AppBarLayout>
@@ -40,10 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:textSize="24sp"
         android:layout_margin="10dp"
-         />
+        android:padding="8dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -57,14 +57,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt"
             android:layout_marginLeft="5dp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:padding="8dp" />
 
         <TextView
             android:text=" ? "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtLat"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="5dp"
+            android:padding="8dp" />
 
     </LinearLayout>
 
@@ -80,20 +82,21 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt1"
             android:layout_marginLeft="5dp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:padding="8dp" />
 
 
-    <TextView
+        <TextView
         android:text=" ? "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtLong"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="5dp"
+            android:padding="8dp" />
 
     </LinearLayout>
 
-
-    <Button
+            <Button
         android:text="GET COORDINATES"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,7 +104,19 @@
         android:layout_margin="10dp"
         android:padding="8dp" />
 
-    <RadioGroup
+            <TextView
+                android:text="Select Message :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:padding="8dp"
+                android:textStyle="normal|bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
+
+            <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
@@ -112,9 +127,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/rdoImmediately"
             android:layout_weight="1"
-            android:background="@android:color/holo_red_light"
             android:padding="8dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/holo_red_dark" />
 
         <RadioButton
             android:text="@string/Possible"
@@ -122,9 +137,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/rdoPossible"
             android:layout_weight="1"
-            android:background="@android:color/holo_orange_dark"
             android:padding="8dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/holo_orange_dark"
+             />
 
         <RadioButton
             android:text="@string/Okay"
@@ -132,9 +148,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/rdoOkay"
             android:layout_weight="1"
-            android:background="@android:color/holo_green_light"
             android:padding="8dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/holo_green_dark"
+             />
     </RadioGroup>
 
     <Button
