@@ -6,12 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Prepare extends Fragment {
+
+    private Button earthBtn, fireBtn, floodBtn, landBtn, tsunamiBtn, typBtn, volBtn;
 
 
     public Prepare() {
@@ -23,7 +26,66 @@ public class Prepare extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_prepare, container, false);
+        View v = inflater.inflate(R.layout.fragment_prepare, container, false);
+
+        earthBtn = (Button) v.findViewById(R.id.btnEarthquake);
+        fireBtn = (Button) v.findViewById(R.id.btnFire);
+        floodBtn = (Button) v.findViewById(R.id.btnFlood);
+        landBtn = (Button) v.findViewById(R.id.btnLandslide);
+        tsunamiBtn = (Button) v.findViewById(R.id.btnTsunami);
+        typBtn = (Button) v.findViewById(R.id.btnTyphoon);
+        volBtn = (Button) v.findViewById(R.id.btnVolcano);
+
+        earthBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        fireBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        floodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        landBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        tsunamiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        typBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        volBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        return v;
     }
 
 }

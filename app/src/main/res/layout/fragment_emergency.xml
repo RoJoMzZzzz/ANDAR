@@ -2,11 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.research.andrade.andar.Emergency"
     tools:ignore="uselessParent"
     android:background="?attr/colorButtonNormal"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true">
 
     <ScrollView
         android:layout_width="fill_parent"
