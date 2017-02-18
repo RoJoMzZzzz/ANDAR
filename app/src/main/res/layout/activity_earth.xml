@@ -24,4 +24,215 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/appBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/earthheader"
+            android:id="@+id/imageView2"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:cropToPadding="true"
+            android:layout_height="200dp" />
+
+            <TextView
+                android:text="An earthquake is a sudden, rapid shaking of the ground caused by the shifting of rocks beneath the earth\'s surface. Eqarthquakes strike suddenly, without warning, and can occur at any time of the year - day or night. "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:text="Before"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="Bolt and brace water heaters and gas appliances to wall studs."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Bolt bookcases, china cabinets and other tall furniture to wall studs."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView111"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Hang heavy items, such as pictures and mirrors, away from beds, couches and anywhere people sleep or sit."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView112"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Brace overhead light fixtures."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView113"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Install strong latches or bolts on cabinets. Large or heavy items should be the closest to the floor."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView114"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Learn how to shut off the gas valves in your home and keep a wrench handy for that purpose."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView115"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000"/>
+
+            <TextView
+                android:text="During - if indoors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView101"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="DROP, cover and hold on. Move as little as possible and watch for falling objects.\n\nIt is important to keep your head and torso covered. If you're sitting at a desk or table, get under it. Otherwise drop wherever you are."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11d"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="If you are in bed, stay there, curl up and hold on, protecting your head with a pillow."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView111d"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Stay away from windows to avoid being injured by shattered glass."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView112d"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Stay indoors until the shaking stops and you are sure it is safe to exit.\n If you must go outside after the shaking stops, use stairs rather than an elevator in case of aftershocks, power outrages or other damages."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView113d"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="Be aware that fire alarms and sprinkler systems frequently go off in buildings during an earthquake, even if thereis no fire."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView114d"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:textColor="#000"
+                android:drawableStart="@drawable/redqr" />
+
+            <TextView
+                android:text="During - if you are in a vehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView100"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="Find a clear spot and drop to the ground. Stay there until the shaking stops (away from buildings, power lines, trees, streetlights)."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11p"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </RelativeLayout>

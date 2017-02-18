@@ -1,6 +1,7 @@
 package com.research.andrade.andar;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -39,7 +40,7 @@ public class Prepare extends Fragment {
         earthBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Earth.class));
             }
         });
 
