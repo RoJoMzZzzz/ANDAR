@@ -3,6 +3,11 @@ package com.research.andrade.andar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import io.fabric.sdk.android.Fabric;
@@ -12,7 +17,8 @@ public class SplashScreen extends AppCompatActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "1h3yGRCRBld8xdNPenI8aDn21";
     private static final String TWITTER_SECRET = "nE6uINZxUicaHCmhwH3hmkP5dAsjlX9rMD917L7Lgi6R7YaSs6";
-
+    private ImageView logo;
+    private TextView one, two, three;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,34 @@ public class SplashScreen extends AppCompatActivity {
         Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_splash_screen);
 
-        Thread myTh = new Thread() {
+        logo = (ImageView) findViewById(R.id.imageView);
+        one = (TextView) findViewById(R.id.txtAndroid);
+        two = (TextView) findViewById(R.id.txtNatural);
+        three = (TextView) findViewById(R.id.txtAlert);
+        Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_down_in);
+        final Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_up_in);
+        logo.setAnimation(anim);
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                 one.setAnimation(anim1);
+                two.setAnimation(anim1);
+                three.setAnimation(anim1);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+       /* Thread myTh = new Thread() {
             @Override
             public void run() {
                 try {
@@ -33,6 +66,6 @@ public class SplashScreen extends AppCompatActivity {
                 }
             }
         };
-        myTh.start();
+        myTh.start();*/
     }
 }

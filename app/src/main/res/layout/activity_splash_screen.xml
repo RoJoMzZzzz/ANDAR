@@ -8,24 +8,6 @@
     tools:context="com.research.andrade.andar.SplashScreen"
     android:background="@android:color/darker_gray">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/alert"
-        android:id="@+id/imageView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="ANDAR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_above="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:textSize="24sp" />
-
     <TextView
         android:text="ANDROID"
         android:layout_width="wrap_content"
@@ -33,23 +15,34 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:id="@+id/textView3"
+        android:id="@+id/txtAndroid"
         android:textSize="18sp" />
     <TextView
         android:text="NATURAL DISASTER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/txtAndroid"
         android:layout_centerHorizontal="true"
 
-        android:id="@+id/textView4"
+        android:id="@+id/txtNatural"
         android:textSize="18sp" />
     <TextView
         android:text="ALERT RESPONSE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/txtNatural"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView5"
+        android:id="@+id/txtAlert"
         android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/andarlogo1"
+        android:id="@+id/imageView"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:cropToPadding="false"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
