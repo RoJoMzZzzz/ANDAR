@@ -209,7 +209,7 @@
                 android:drawableStart="@drawable/redqr" />
 
             <TextView
-                android:text="During - if you are in a vehicle"
+                android:text="During - if you are outside"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView100"
@@ -224,6 +224,160 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView11p"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="During - if you are in a vehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1000"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="Pull over to a clear location and stop.\n Avoid bridges, overpasses and power lines if possible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11p0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Stay inside with your seatblelt fastened until the shaking stops.\n Then, drive carefully, avoiding bridges and ramps that may have been damaged."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="If a power line falls on your vehicle, do not get out. Wait for assistance."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textp0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="If you are in a mountainous area or near unstable slopes or cliffs, be alert for falling rocks and other debris.\n Landslides are often triggered by earthquakes."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11cp0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="After"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView100df0"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="If away from home, return only when authorities sa it is safe to do so."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVidew11p0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Be prepared for aftershocks. If you feel one, drop, cover and hold on.\n Aftershocks frequently occur minutes, days, weeks and even months following an earthquake."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVidew11p"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Open cabinets slowly. Beware of objects that can fall off shelves."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVid1p0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Stay away from damaged areas in and around your home."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVi11p0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Look for and extinguish small fires. Fire is the most common hazard after an earthquake."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVid0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Check for gas leaks to prevent fires and secondary damage: Spray fittings on your gas meter and any fittings on gas appliances with a mixture of water and a little liquid dish soap. If it bubbles there is gas present."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVp0"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/redqr"
+                android:drawablePadding="25dp"
+                android:drawableStart="@drawable/redqr"
+                android:textColor="#000" />
+
+            <TextView
+                android:text="Use extreme caution and examine walls, floors, doors, staircases and windows to check for damage."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/te1p0"
                 android:padding="10dp"
                 android:layout_margin="10dp"
                 android:drawableLeft="@drawable/redqr"
