@@ -31,6 +31,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#fff"
+            >
+
         <TextView
             android:text="Prepare for Natural Disasters"
             android:layout_width="wrap_content"
@@ -40,6 +46,8 @@
             android:padding="5dp"
             android:textStyle="normal|bold"
             android:layout_marginBottom="10dp" />
+
+        </TableRow>
 
     <TableRow
         android:layout_width="match_parent"

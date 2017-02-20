@@ -46,7 +46,7 @@
                 android:layout_height="200dp" />
 
             <TextView
-                android:text="Tsunamis, also known as seismic sea waves \(mistakenly called \'tidal waves\'), are a series of enormous waves created by an underwater disturbance such as an earthquake, landslide, volcanic eruption, or meteorite. A tsunami can move hundreds of miles per hour in the open ocean and smash into land with waves as high as 100 feet or more."
+                android:text="Tsunamis, also known as seismic sea waves (mistakenly called \'tidal waves\'), are a series of enormous waves created by an underwater disturbance such as an earthquake, landslide, volcanic eruption, or meteorite. A tsunami can move hundreds of miles per hour in the open ocean and smash into land with waves as high as 100 feet or more."
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textd"

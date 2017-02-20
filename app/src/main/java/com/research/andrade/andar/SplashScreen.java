@@ -36,12 +36,12 @@ public class SplashScreen extends AppCompatActivity {
         one = (TextView) findViewById(R.id.txtAndroid);
         two = (TextView) findViewById(R.id.txtNatural);
         three = (TextView) findViewById(R.id.txtAlert);
-        Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_down_in);
+        Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_fade_in_from_bottom);
         Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_up_in);
         logo.setAnimation(anim);
-        one.setAnimation(anim);
-        two.setAnimation(anim);
-        three.setAnimation(anim);
+        one.setAnimation(anim1);
+        two.setAnimation(anim1);
+        three.setAnimation(anim1);
 
 
         Timer RunSplash = new Timer();
