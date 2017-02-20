@@ -5,18 +5,18 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class Earth extends AppCompatActivity {
+public class Rate extends AppCompatActivity {
 
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_earth);
+        setContentView(R.layout.activity_rate);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Earthquake");
+        setTitle("My QR Code");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -25,7 +25,7 @@ public class Earth extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Earth.this.finish();
+            Rate.this.finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

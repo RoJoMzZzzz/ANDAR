@@ -36,6 +36,7 @@
         android:textSize="18sp" />
 
     <ProgressBar
+        style="@android:style/Widget.Material.Light.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar2"

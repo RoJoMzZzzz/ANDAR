@@ -56,7 +56,15 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Earth"></activity>
+        <activity android:name=".Earth" />
+        <activity android:name=".Hotlines" />
+        <activity android:name=".Rate" />
+        <activity android:name=".Fire" />
+        <activity android:name=".Flood" />
+        <activity android:name=".Landslide" />
+        <activity android:name=".Tsunami" />
+        <activity android:name=".Typhoon" />
+        <activity android:name=".Volcano"></activity>
     </application>
 
 </manifest>

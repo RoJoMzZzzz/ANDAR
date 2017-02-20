@@ -79,6 +79,13 @@ public class Emergency extends Fragment {
             }
         });
 
+        callAuthority.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),Hotlines.class));
+            }
+        });
+
         savingMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -121,9 +128,9 @@ public class Emergency extends Fragment {
                     screenFlashlight.setChecked(false);
                     strobeFlashlight.setChecked(true);
                     Toast.makeText(getActivity(), "Strobe Flashlight", Toast.LENGTH_SHORT).show();
-                    blinkFlash();
-                } else
-                    turnOffFlash();
+                    //blinkFlash();
+                } //else
+                    //turnOffFlash();
             }
         });
 
@@ -258,7 +265,6 @@ public class Emergency extends Fragment {
 
 
     }
-
 
 
     @Override

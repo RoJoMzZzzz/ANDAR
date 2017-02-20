@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
+
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Delayed;
+
 import io.fabric.sdk.android.Fabric;
 
 public class SplashScreen extends AppCompatActivity {
@@ -32,27 +37,24 @@ public class SplashScreen extends AppCompatActivity {
         two = (TextView) findViewById(R.id.txtNatural);
         three = (TextView) findViewById(R.id.txtAlert);
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_down_in);
-        final Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_up_in);
+        Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_up_in);
         logo.setAnimation(anim);
-        anim.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                 one.setAnimation(anim1);
-                two.setAnimation(anim1);
-                three.setAnimation(anim1);
-            }
+        one.setAnimation(anim);
+        two.setAnimation(anim);
+        three.setAnimation(anim);
 
+
+        Timer RunSplash = new Timer();
+        TimerTask ShowSplash = new TimerTask() {
             @Override
-            public void onAnimationEnd(Animation animation) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            public void run() {
                 finish();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
+        };
 
-            @Override
-            public void onAnimationRepeat(Animation animation) {
+        RunSplash.schedule(ShowSplash, 5000);
 
-            }
-        });
 
        /* Thread myTh = new Thread() {
             @Override

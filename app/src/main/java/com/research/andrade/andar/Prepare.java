@@ -47,42 +47,42 @@ public class Prepare extends Fragment {
         fireBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Fire.class));
             }
         });
 
         floodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Flood.class));
             }
         });
 
         landBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Landslide.class));
             }
         });
 
         tsunamiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Tsunami.class));
             }
         });
 
         typBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Typhoon.class));
             }
         });
 
         volBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), Volcano.class));
             }
         });
 

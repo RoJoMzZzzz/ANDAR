@@ -104,11 +104,11 @@
                 android:layout_height="match_parent"
                 >
                 <Button
-                    android:id="@+id/btnWeatherLog"
+                    android:id="@+id/btnRate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:text="@string/WeatherLog"
+                    android:text="Rate this App"
                     android:textAlignment="textStart"
                     android:textAllCaps="false"
                     android:layout_gravity="start"
