@@ -36,8 +36,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                app:srcCompat="@drawable/earthheader"
+                android:layout_width="match_parent"
+                app:srcCompat="@drawable/landslide1"
                 android:id="@+id/imageVie"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"

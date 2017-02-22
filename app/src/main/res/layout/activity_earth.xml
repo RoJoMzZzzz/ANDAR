@@ -30,6 +30,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
         android:layout_below="@+id/appBar">
 
         <LinearLayout
@@ -38,8 +39,8 @@
             android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/earthheader"
+            android:layout_width="match_parent"
+            app:srcCompat="@drawable/earthquake1"
             android:id="@+id/imageView2"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
