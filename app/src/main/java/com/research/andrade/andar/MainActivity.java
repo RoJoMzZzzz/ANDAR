@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Update");
+        setTitle("Prepare");
 
         appBarLayout = (AppBarLayout)findViewById(R.id.appBar);
 //        appBarLayout.setExpanded(false, true);
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position == 0) {
-                    setTitle("Update");
+                    setTitle("Prepare");
                 } else if (position == 1) {
                     setTitle("Emergency");
                 } else if (position == 2) {
-                    setTitle("Prepare");
+                    setTitle("Update");
                 } else if (position == 3) {
                     setTitle("More");
                 }
@@ -71,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.update2);
+        tabLayout.getTabAt(2).setIcon(R.drawable.update2);
         tabLayout.getTabAt(1).setIcon(R.drawable.emergency);
-        tabLayout.getTabAt(2).setIcon(R.drawable.prepare);
+        tabLayout.getTabAt(0).setIcon(R.drawable.prepare);
         tabLayout.getTabAt(3).setIcon(R.drawable.more);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Update(), "Update");
-        adapter.addFragment(new Emergency(), "Emergency");
         adapter.addFragment(new Prepare(), "Prepare");
+        adapter.addFragment(new Emergency(), "Emergency");
+        adapter.addFragment(new Update(), "Update");
         adapter.addFragment(new More(), "More");
         viewPager.setAdapter(adapter);
     }

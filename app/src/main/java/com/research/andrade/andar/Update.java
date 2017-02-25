@@ -19,7 +19,7 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
  */
 public class Update extends Fragment {
 
-    private EditText hanap;
+    //private EditText hanap;
     private ListView tweetsLv;
 
 
@@ -47,7 +47,7 @@ public class Update extends Fragment {
 
         tweetsLv.setAdapter(adapter);
         tweetsLv.setTextFilterEnabled(true);
-        hanap.addTextChangedListener(new TextWatcher() {
+        /*hanap.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -62,7 +62,7 @@ public class Update extends Fragment {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
 
 
         return v;

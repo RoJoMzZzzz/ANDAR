@@ -7,12 +7,14 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -141,7 +143,9 @@ public class Emergency extends Fragment {
                     flashlight.setChecked(false);
                     strobeFlashlight.setChecked(false);
                     Toast.makeText(getActivity(), "Screen Flashlight", Toast.LENGTH_SHORT).show();
-                }
+                    MaxBright();
+                } else
+                    MinBright();
             }
         });
 
@@ -160,6 +164,36 @@ public class Emergency extends Fragment {
         });
 
         return view;
+    }
+
+
+    private void MaxBright(){
+        try {
+            //sets manual mode and brightnes 255
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);  //this will set the manual mode (set the automatic mode off)
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 255);  //this will set the brightness to maximum (255)
+
+            //refreshes the screen
+            int br = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
+            WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+            lp.screenBrightness = (float) br / 255;
+            getActivity().getWindow().setAttributes(lp);
+
+        } catch (Exception e) {}
+    }
+
+    private void MinBright(){
+        try {
+
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);  //this will set the manual mode (set the automatic mode off)
+
+            //refreshes the screen
+            int br = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
+            WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+            lp.screenBrightness = (float) br / 1;
+            getActivity().getWindow().setAttributes(lp);
+
+        } catch (Exception e) {}
     }
 
 
