@@ -35,7 +35,7 @@ public class Update extends Fragment {
         View v = inflater.inflate(R.layout.fragment_update, container, false);
 
 
-        hanap = (EditText) v.findViewById(R.id.svTweets);
+        //hanap = (EditText) v.findViewById(R.id.svTweets);
         tweetsLv = (ListView) v.findViewById(R.id.lvTweets);
 
         final UserTimeline userTimeline = new UserTimeline.Builder()

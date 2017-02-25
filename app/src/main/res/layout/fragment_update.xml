@@ -9,11 +9,6 @@
     tools:context="com.research.andrade.andar.Update">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/svTweets" />
-
     <ListView android:id="@+id/lvTweets"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"

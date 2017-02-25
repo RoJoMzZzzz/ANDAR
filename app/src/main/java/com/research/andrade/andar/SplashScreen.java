@@ -37,7 +37,7 @@ public class SplashScreen extends AppCompatActivity {
         two = (TextView) findViewById(R.id.txtNatural);
         three = (TextView) findViewById(R.id.txtAlert);
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_fade_in_from_bottom);
-        Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.push_down_in);
+        Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_in_left);
         logo.setAnimation(anim);
         one.setAnimation(anim1);
         two.setAnimation(anim1);
