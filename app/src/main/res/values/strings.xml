@@ -33,4 +33,35 @@
     <string name="CreateNewQR">Create New QR Code</string>
     <string name="AddNewEmCont">Add New Emergency Contact</string>
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="send">
+        <item>Barangay Poblacion</item>
+        <item>Emergency Contacts</item>
+        <item>Both</item>
+    </string-array>
+
+    <string-array name="loc">
+        <item>C. Almeda St.</item>
+        <item>A. Mabini St.</item>
+        <item>G. Flores St.</item>
+        <item>P. Tangco St.</item>
+        <item>J. Rizal St.</item>
+        <item>P. Herrera St.</item>
+        <item>B. Morcilla St.</item>
+        <item>S. Tuazon  St. - 1st Block</item>
+        <item>S. Tuazon  St. - 2nd Block</item>
+        <item>S. Tuazon  St. - 3rd Block</item>
+    </string-array>
+
+    <string-array name="ass">
+        <item>Earthquake</item>
+        <item>Fire</item>
+        <item>Flood</item>
+        <item>Landslide</item>
+        <item>Tsunami</item>
+        <item>Typhoon</item>
+        <item>Volcano</item>
+        <item>Others</item>
+    </string-array>
+
 </resources>

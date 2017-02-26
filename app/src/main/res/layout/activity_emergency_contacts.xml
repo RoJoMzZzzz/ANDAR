@@ -55,7 +55,7 @@
         android:layout_marginRight="5dp" />
 
     <Button
-        android:text="Search Contacts from Phone"
+        android:text="Add Contacts from Phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtAddCont"
@@ -101,7 +101,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtEmCont"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true" />
 
 
 </RelativeLayout>

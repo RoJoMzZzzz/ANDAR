@@ -70,7 +70,7 @@ public class Emergency extends Fragment {
         messageContacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),MessageContact.class));
+                startActivity(new Intent(getActivity(),MessageContact2.class));
             }
         });
 

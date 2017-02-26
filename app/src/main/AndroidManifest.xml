@@ -7,9 +7,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera.flash" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
@@ -61,7 +65,8 @@
         <activity android:name=".Landslide" />
         <activity android:name=".Tsunami" />
         <activity android:name=".Typhoon" />
-        <activity android:name=".Volcano"></activity>
+        <activity android:name=".Volcano" />
+        <activity android:name=".MessageContact2"></activity>
     </application>
 
 </manifest>
