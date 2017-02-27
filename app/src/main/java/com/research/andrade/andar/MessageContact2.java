@@ -132,17 +132,17 @@ public class MessageContact2 extends AppCompatActivity {
                         assData = othersEdt.getText().toString();
                     }
                     Toast.makeText(MessageContact2.this,"Name: "+usernameEdt.getText().toString()+"\n"+"Location: "+locData+"\n"+"Assistance for: "+assData,Toast.LENGTH_SHORT).show();
+                    for (int i = 0; i < listItems.size(); i++)
+                    {
+                        String message = "ANDAR EMERGENCY MESSAGE\n\n"+"NAME: "+usernameEdt.getText().toString()+"\n"+"LOCATION: "+locData+"\n"+"ASSISTANCE FOR: "+assData;
+                        String tempMobileNumber = listItems.get(i).toString();
+                        MultipleSMS(tempMobileNumber, message);
+                    }
 
                 }
 
 
 
-                /*for (int i = 0; i < listItems.size(); i++)
-                {
-                    String message = "Name: "+usernameEdt.getText().toString()+"\n"+"Location: "+locData+"\n"+"Assistance for: "+assData;
-                    String tempMobileNumber = listItems.get(i).toString();
-                    MultipleSMS(tempMobileNumber, message);
-                }*/
 
             }
         });
