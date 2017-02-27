@@ -68,11 +68,7 @@ public class MessageContact2 extends AppCompatActivity {
         locSpn.setAdapter(locAdp);
         assSpn.setAdapter(assAdp);
 
-       Cursor res1 = db.getAllContact();
 
-        while (res1.moveToNext()){
-            listItems.add(res1.getString(1));
-        }
 
 
         sendSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -128,6 +124,22 @@ public class MessageContact2 extends AppCompatActivity {
                 if(usernameEdt.getText().toString().trim().length() == 0){
                     usernameEdt.setError("Please fill-up this field");
                 } else {
+
+                    Cursor res1 = db.getAllContact();
+
+                    if(sendData.equalsIgnoreCase("both")){
+                        listItems.add("09951651215");
+                        while (res1.moveToNext()){
+                            listItems.add(res1.getString(1));
+                        }
+                    } else if(sendData.equalsIgnoreCase("Barangay Poblacion")){
+                        listItems.add("09951651215");
+                    } else if(sendData.equalsIgnoreCase("Emergency Contacts")){
+                        while (res1.moveToNext()){
+                            listItems.add(res1.getString(1));
+                        }
+                    }
+
                     if (assData.equalsIgnoreCase("Others")){
                         assData = othersEdt.getText().toString();
                     }
