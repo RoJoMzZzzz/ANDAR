@@ -15,7 +15,7 @@ import android.widget.Button;
  */
 public class More extends Fragment {
 
-    private Button scanQrClass, tracker, rating;
+    private Button scanQrClass, tracker, rating, messLog, callLog;
 
     public More() {
         // Required empty public constructor
@@ -30,6 +30,8 @@ public class More extends Fragment {
         scanQrClass = (Button) view.findViewById(R.id.btnQrCodeScanner);
         tracker = (Button) view.findViewById(R.id.btnTracker);
         rating = (Button) view.findViewById(R.id.btnRate);
+        messLog = (Button) view.findViewById(R.id.btnMessageLog);
+        callLog = (Button) view.findViewById(R.id.btnCallLog);
 
         scanQrClass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +51,20 @@ public class More extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), Rate.class));
+            }
+        });
+
+        messLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MessageLog.class));
+            }
+        });
+
+        callLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CallLogs.class));
             }
         });
 

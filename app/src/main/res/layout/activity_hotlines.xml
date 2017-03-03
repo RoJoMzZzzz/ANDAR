@@ -70,7 +70,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnLocPolice"
                     android:layout_weight="1"
-                    android:layout_width="300dp" />
+                    android:layout_width="300dp"
+                      />
 
             </LinearLayout>
 
@@ -97,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnLocFire"
                 android:layout_weight="1"
-                 />
+                  />
 
 
         </LinearLayout>
@@ -125,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnLocRescue"
                 android:layout_weight="1"
-                 />
+                  />
 
             </LinearLayout>
 
@@ -153,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnPoblacion"
                 android:layout_weight="1"
-                />
+                  />
 
             </LinearLayout>
 
@@ -191,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnFireBonifacio"
                     android:layout_weight="1"
-                    />
+                      />
 
             </LinearLayout>
 
@@ -223,7 +224,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFireTaguig1"
                         android:layout_weight="1"
-                        android:layout_width="match_parent" />
+                        android:layout_width="match_parent"
+                         />
 
                     <Button
                         android:text="5423695"
@@ -231,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFireTaguig2"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="8374496"
@@ -239,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFireTaguig3"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
 
@@ -268,7 +270,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnFireMakati"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 
@@ -300,7 +302,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnFirePasig1"
                     android:layout_weight="1"
-                    />
+                     />
 
                     <Button
                         android:text="6412815"
@@ -308,7 +310,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFirePasig2"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
 
@@ -342,7 +344,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFirePasay1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="8436523"
@@ -350,7 +352,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnFirePasay2"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
 
@@ -395,7 +397,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnNdrrmc1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 9122665"
@@ -403,7 +405,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnNdrrmc2"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 9125668"
@@ -411,7 +413,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnNdrrmc3"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
 
@@ -445,7 +447,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBfp1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 4106254"
@@ -453,7 +455,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBfp2"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 4318859"
@@ -461,7 +463,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBfp3"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 4071230"
@@ -469,7 +471,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBfp4"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
             </LinearLayout>
@@ -497,7 +499,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnPnpHotlinePatrol"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 
@@ -529,7 +531,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnDotc1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="09188848484"
@@ -537,7 +539,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnDotc2"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
             </LinearLayout>
@@ -565,7 +567,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnMmdaMetrobase"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 
@@ -597,7 +599,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnMmdaFlood1"
                     android:layout_weight="1"
-                    />
+                     />
 
                 <Button
                     android:text="8820925"
@@ -605,7 +607,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnMmdaFlood2"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
                 </LinearLayout>
@@ -633,7 +635,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnDpwh"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 
@@ -665,7 +667,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnRedCross1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 9111876"
@@ -673,7 +675,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnRedCross2"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
             </LinearLayout>
@@ -701,7 +703,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnPagasa"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 
@@ -733,7 +735,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnPhCoast1"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="(02) 5278481"
@@ -741,7 +743,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnPhCoast2"
                         android:layout_weight="1"
-                        />
+                         />
 
                     <Button
                         android:text="09177243682"
@@ -749,7 +751,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/btnPhCoast3"
                         android:layout_weight="1"
-                        />
+                         />
 
                 </LinearLayout>
             </LinearLayout>
@@ -777,7 +779,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btnDoh"
                     android:layout_weight="1"
-                    />
+                     />
 
             </LinearLayout>
 

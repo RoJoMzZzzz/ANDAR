@@ -64,4 +64,33 @@
         <item>Others</item>
     </string-array>
 
+    <string-array name="local">
+        <item>Police</item>
+        <item>Fire</item>
+        <item>Rescue</item>
+        <item>Barangay Poblacion</item>
+    </string-array>
+
+    <string-array name="nearby">
+        <item>Bonifacio Fire Department</item>
+        <item>Taguig Fire Department</item>
+        <item>Makati Fire Department</item>
+        <item>Pasig Fire Department</item>
+        <item>Pasay Fire Department</item>
+    </string-array>
+
+    <string-array name="ncr">
+        <item>NDRRMC</item>
+        <item>Bureau of Fire Protection</item>
+        <item>PNP Hotline Patrol</item>
+        <item>DOTC</item>
+        <item>MMDA Metrobase</item>
+        <item>MMDA Flood Control</item>
+        <item>DPWH</item>
+        <item>Red Cross</item>
+        <item>PAGASA</item>
+        <item>Philippine Coast Guard</item>
+        <item>DOH</item>
+    </string-array>
+
 </resources>

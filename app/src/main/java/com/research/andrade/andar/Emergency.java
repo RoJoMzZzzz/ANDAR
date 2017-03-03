@@ -84,7 +84,7 @@ public class Emergency extends Fragment {
         callAuthority.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),Hotlines.class));
+                startActivity(new Intent(getActivity(),EmergencyHotlines2.class));
             }
         });
 

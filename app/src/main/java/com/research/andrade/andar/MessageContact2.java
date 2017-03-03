@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MessageContact2 extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class MessageContact2 extends AppCompatActivity {
     private Spinner sendSpn, locSpn, assSpn;
     private EditText othersEdt, usernameEdt;
     private Button sendBtn;
-    private String sendData="", locData="", assData="";
+    private String sendData="", locData="", assData="", remarkses="";
     private ArrayList<String> listItems=new ArrayList<String>();
 
     @Override
@@ -67,8 +68,6 @@ public class MessageContact2 extends AppCompatActivity {
         sendSpn.setAdapter(sendAdp);
         locSpn.setAdapter(locAdp);
         assSpn.setAdapter(assAdp);
-
-
 
 
         sendSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -146,19 +145,35 @@ public class MessageContact2 extends AppCompatActivity {
                     Toast.makeText(MessageContact2.this,"Name: "+usernameEdt.getText().toString()+"\n"+"Location: "+locData+"\n"+"Assistance for: "+assData,Toast.LENGTH_SHORT).show();
                     for (int i = 0; i < listItems.size(); i++)
                     {
+
+                        Calendar c = Calendar.getInstance();
+                        int minutes = c.get(Calendar.MINUTE);
+                        int hour = c.get(Calendar.HOUR);
+                        int month = c.get(Calendar.MONTH) + 1;
+                        int day = c.get(Calendar.DATE);
+                        int ampm = c.get(Calendar.AM_PM);
+                        int year = c.get(Calendar.YEAR);
+                        String chk;
+                        if(ampm == 1)
+                            chk = "PM";
+                        else
+                            chk = "AM";
+
+                        final String currDate = ""+month+"/"+day+"/"+year+"\n"+hour+":"+minutes+" "+chk;
+
                         String message = "ANDAR EMERGENCY MESSAGE\n\n"+"NAME: "+usernameEdt.getText().toString()+"\n"+"LOCATION: "+locData+"\n"+"ASSISTANCE FOR: "+assData;
                         String tempMobileNumber = listItems.get(i).toString();
                         MultipleSMS(tempMobileNumber, message);
+
+                        boolean insCont = db.insertMessage(listItems.get(i).toString(), currDate, remarkses, message);
+                        if(insCont)
+                            Toast.makeText(MessageContact2.this, "inserted", Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(MessageContact2.this, "not inserted", Toast.LENGTH_LONG).show();
                     }
-
                 }
-
-
-
-
             }
         });
-
     }
 
     @Override
@@ -173,6 +188,24 @@ public class MessageContact2 extends AppCompatActivity {
     private void MultipleSMS(String phoneNumber, final String message) {
         String SENT = "SMS_SENT";
         String DELIVERED = "SMS_DELIVERED";
+
+        final Database db = new Database(this);
+
+        Calendar c = Calendar.getInstance();
+        int minutes = c.get(Calendar.MINUTE);
+        int hour = c.get(Calendar.HOUR);
+        int month = c.get(Calendar.MONTH) + 1;
+        int day = c.get(Calendar.DATE);
+        int ampm = c.get(Calendar.AM_PM);
+        int year = c.get(Calendar.YEAR);
+        String chk;
+        if(ampm == 1)
+            chk = "PM";
+        else
+            chk = "AM";
+
+
+        final String currDate = ""+month+"/"+day+"/"+year+"\n"+hour+":"+minutes+" "+chk;
 
         PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(
                 SENT), 0);
@@ -191,28 +224,39 @@ public class MessageContact2 extends AppCompatActivity {
                             values.put("address", listItems.get(i).toString());
                             // txtPhoneNo.getText().toString());
                             values.put("body", message);
+
                         }
                         getContentResolver().insert(
                                 Uri.parse("content://sms/sent"), values);
                         Toast.makeText(getBaseContext(), "SMS sent",
                                 Toast.LENGTH_SHORT).show();
+                        remarkses="Sent";
                         break;
+
                     case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
-                        Toast.makeText(getBaseContext(), "Generic failure",
+                        Toast.makeText(getBaseContext(), "Generic failure\n"+currDate,
                                 Toast.LENGTH_SHORT).show();
+                        remarkses="Not Sent";
                         break;
+
                     case SmsManager.RESULT_ERROR_NO_SERVICE:
                         Toast.makeText(getBaseContext(), "No service",
                                 Toast.LENGTH_SHORT).show();
+                        remarkses="Not Sent";
                         break;
+
                     case SmsManager.RESULT_ERROR_NULL_PDU:
                         Toast.makeText(getBaseContext(), "Null PDU",
                                 Toast.LENGTH_SHORT).show();
+                        remarkses="Not Sent";
                         break;
+
                     case SmsManager.RESULT_ERROR_RADIO_OFF:
-                        Toast.makeText(getBaseContext(), "Radio off",
+                        Toast.makeText(getBaseContext(), "Radio off\n"+currDate,
                                 Toast.LENGTH_SHORT).show();
+                        remarkses="Not Sent";
                         break;
+
                 }
             }
         }, new IntentFilter(SENT));
