@@ -72,9 +72,9 @@
                 android:id="@+id/textView11"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
             <TextView
@@ -84,9 +84,9 @@
                 android:id="@+id/textVew11"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
             <TextView
@@ -107,9 +107,9 @@
                 android:id="@+id/txtVol"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
             <TextView
@@ -130,9 +130,9 @@
                 android:id="@+id/textVi3ew11"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
             <TextView
@@ -142,9 +142,9 @@
                 android:id="@+id/textVew1123"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
             <TextView
@@ -154,9 +154,9 @@
                 android:id="@+id/t2extVe2w11"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/redqr"
+                android:drawableLeft="@drawable/bullet"
                 android:drawablePadding="25dp"
-                android:drawableStart="@drawable/redqr"
+                android:drawableStart="@drawable/bullet"
                 android:textColor="#000" />
 
         </LinearLayout>

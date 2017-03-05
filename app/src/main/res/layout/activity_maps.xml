@@ -29,8 +29,9 @@
         android:id="@+id/edtLati"
         android:hint="Input Latitude"
         android:inputType="number|numberSigned|numberDecimal"
-        android:padding="8dp"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:background="@drawable/edt_back"
+        android:padding="8dp"/>
 
     <EditText
         android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
         android:id="@+id/edtLongi"
         android:hint="Input Longitude"
         android:inputType="number|numberSigned|numberDecimal"
+        android:background="@drawable/edt_back"
         android:padding="8dp"
         android:layout_margin="5dp" />
 

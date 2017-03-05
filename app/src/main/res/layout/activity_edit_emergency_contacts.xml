@@ -48,7 +48,9 @@
         android:hint="Input Display Name"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edt_back"
+        android:padding="8dp" />
 
     <TextView
         android:text="Contact Number"
@@ -72,7 +74,9 @@
         android:id="@+id/edtContNum"
         android:hint="Input Contact Number"
         android:layout_alignRight="@+id/edtDispName"
-        android:layout_alignEnd="@+id/edtDispName" />
+        android:layout_alignEnd="@+id/edtDispName"
+        android:background="@drawable/edt_back"
+        android:padding="8dp" />
 
     <Button
         android:text="CANCEL"

@@ -42,7 +42,9 @@
             android:ems="10"
             android:id="@+id/edtName"
             android:hint="Full Name"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:background="@drawable/edt_back"
+            android:padding="8dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -51,7 +53,9 @@
             android:ems="10"
             android:id="@+id/edtAddress"
             android:hint="Address"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:background="@drawable/edt_back"
+            android:padding="8dp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -60,7 +64,9 @@
                 android:ems="10"
                 android:id="@+id/edtBday"
                 android:hint="Birthday"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/edt_back"
+                android:padding="8dp" />
 
             <EditText
             android:layout_width="match_parent"
@@ -70,7 +76,10 @@
             android:id="@+id/edtOthers"
                 android:hint="Any Informations You want to Include"
                 android:layout_gravity="top"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/edt_back"
+                android:gravity="top"
+                android:padding="8dp" />
 
             <Button
             android:text="Generate"
@@ -78,7 +87,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnGenQR2"
                 android:layout_margin="10dp"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:background="@drawable/btn_back"
+                android:padding="8dp" />
 
         </LinearLayout>
 
