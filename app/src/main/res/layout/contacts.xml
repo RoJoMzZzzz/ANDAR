@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:textSize="22dp"
     android:id="@+id/textView1"
-    android:background="#fff">
+    android:background="#fff"
+    android:layout_margin="10dp">
 
 </TextView>

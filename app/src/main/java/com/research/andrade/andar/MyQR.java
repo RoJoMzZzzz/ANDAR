@@ -41,7 +41,7 @@ public class MyQR extends AppCompatActivity {
         Cursor res = db.getMyQR();
 
         if (res.getCount() == 0) {
-            myQrImg.setImageResource(R.drawable.fire);
+            myQrImg.setImageResource(R.drawable.andarlogo1);
         } else {
             while(res.moveToNext()){
                 Bitmap myQRtoBitmap = getImage(res.getBlob(0));

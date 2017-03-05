@@ -50,31 +50,41 @@ public class NewQR extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 db.deleteMyQr();
-                String text2Qr = name.getText().toString() +"\n"+address.getText().toString() +"\n"+bday.getText().toString() +"\n"+others.getText().toString();
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                try {
-                    BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE,200,200);
-                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
 
-                    byte[] myQRtoByte = getBytes(bitmap);
 
-                    boolean ins = db.insertQR(myQRtoByte);
+                    if(name.getText().toString().trim().length()==0)
+                        name.setError("Please input your name");
+                    else if(address.getText().toString().trim().length()==0)
+                        address.setError("Please input your address");
+                    else if(bday.getText().toString().trim().length()==0)
+                        bday.setError("Please input your bday");
+                    else {
 
-                    if(ins) {
+                        String text2Qr = name.getText().toString() +"\n"+address.getText().toString() +"\n"+bday.getText().toString() +"\n"+others.getText().toString();
+                        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+                        try {
+                            BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE,200,200);
+                            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
 
-                        Toast.makeText(NewQR.this, "inserted", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(NewQR.this,MyQR.class));
+                            byte[] myQRtoByte = getBytes(bitmap);
+
+                        boolean ins = db.insertQR(myQRtoByte);
+
+                        if (ins) {
+
+                            Toast.makeText(NewQR.this, "inserted", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(NewQR.this, MyQR.class));
+                        } else
+                            Toast.makeText(NewQR.this, "not inserted", Toast.LENGTH_LONG).show();
+
+                        } catch (WriterException e) {
+                            e.printStackTrace();
+                        }
+
                     }
 
-                    else
-                        Toast.makeText(NewQR.this, "not inserted", Toast.LENGTH_LONG).show();
 
-
-
-                } catch (WriterException e) {
-                    e.printStackTrace();
-                }
             }
         });
 

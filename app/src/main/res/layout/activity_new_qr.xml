@@ -41,7 +41,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edtName"
-            android:hint="Full Name" />
+            android:hint="Full Name"
+            android:layout_margin="10dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -49,7 +50,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edtAddress"
-            android:hint="Address" />
+            android:hint="Address"
+            android:layout_margin="10dp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -57,22 +59,26 @@
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/edtBday"
-                android:hint="Birthday" />
+                android:hint="Birthday"
+                android:layout_margin="10dp" />
 
             <EditText
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="244dp"
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/edtOthers"
-            android:layout_weight="0.47"
-            android:hint="Any Informations You want to Include" />
+                android:hint="Any Informations You want to Include"
+                android:layout_gravity="top"
+                android:layout_margin="10dp" />
 
-        <Button
+            <Button
             android:text="Generate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGenQR2" />
+            android:id="@+id/btnGenQR2"
+                android:layout_margin="10dp"
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
