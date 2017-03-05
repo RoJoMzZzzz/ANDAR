@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class References extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView refTxt, ndrrmcTxt, githubTxt;
+    private TextView refTxt, ndrrmcTxt, githubTxt, stackTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class References extends AppCompatActivity {
         refTxt = (TextView) findViewById(R.id.txtFirstAidApp);
         ndrrmcTxt = (TextView) findViewById(R.id.txtNdrrmcRes);
         githubTxt = (TextView) findViewById(R.id.txtGithubRes);
+        stackTxt = (TextView) findViewById(R.id.txtStackOverFlowRes);
 
         refTxt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,15 @@ public class References extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse(githubTxt.getText().toString()));
+                startActivity(intent);
+            }
+        });
+
+        stackTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(stackTxt.getText().toString()));
                 startActivity(intent);
             }
         });
