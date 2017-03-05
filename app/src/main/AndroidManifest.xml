@@ -74,7 +74,8 @@
         <activity android:name=".MessageContact2" />
         <activity android:name=".EmergencyHotlines2" />
         <activity android:name=".MessageLog" />
-        <activity android:name=".CallLogs"></activity>
+        <activity android:name=".CallLogs" />
+        <activity android:name=".References"></activity>
     </application>
 
 </manifest>

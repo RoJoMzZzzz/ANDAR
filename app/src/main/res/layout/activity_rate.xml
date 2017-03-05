@@ -34,7 +34,7 @@
                 android:id="@+id/ratingBar"
                 android:layout_weight="1"
                 android:numStars="5"
-                android:rating="3"
+                android:rating="0"
                 android:stepSize=".5"
                 android:isIndicator="false"
                 android:layout_gravity="center"
@@ -97,7 +97,8 @@ android:textStyle="normal|bold"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:rating="0" />
 
 
 </RelativeLayout>
