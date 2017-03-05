@@ -30,19 +30,19 @@ public class CallLogs extends AppCompatActivity {
 
         final Database db = new Database(this);
 
-        callLogLv = (ListView) findViewById(R.id.lvCallLogs);
 
-        Cursor res = db.getAllContact();
+
+        Cursor res = db.getAllCalls();
         adapter=new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_2,
+                R.layout.contacts,
                 listItems);
 
         while (res.moveToNext()){
-            listItems.add("Number: "+res.getString(1)+"\nDepartment: "+res.getString(2)+"\nTime: "+res.getString(3));
+            listItems.add("Number: "+res.getString(1)+"\nDepartment: "+res.getString(2)+"\nDate: "+res.getString(3)+"\nTime: "+res.getString(4));
             adapter.notifyDataSetChanged();
         }
 
-        callLogLv = (ListView) findViewById(R.id.lvEmCont);
+        callLogLv = (ListView) findViewById(R.id.lvCallLogs);
         callLogLv.setAdapter(adapter);
 
     }

@@ -28,7 +28,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
     private Spinner localSpn, nearbySpn, ncrSpn;
     private Button localBtn,nearbyBtn1,nearbyBtn2,nearbyBtn3,ncrBtn1,ncrBtn2,ncrBtn3,ncrBtn4;
     private ArrayAdapter localAdp, nearbyAdp, ncrAdp;
-    private String telNum="", department="", dept="";
+    private String telNum="", department="", dept="", locDept="", nearbyDept="", ncrDept="";
+    private Database db = new Database(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +89,7 @@ public class EmergencyHotlines2 extends AppCompatActivity {
                     ncrBtn2.setText("(02) 9122665");
                     ncrBtn3.setText("(02) 9125668");
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="NDRRMC";
+                    ncrDept="NDRRMC";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Bureau of Fire Protection")){
                     ncrBtn1.setText("(02) 7295166");
                     ncrBtn2.setVisibility(View.VISIBLE);
@@ -97,52 +98,52 @@ public class EmergencyHotlines2 extends AppCompatActivity {
                     ncrBtn3.setText("(02) 4318859");
                     ncrBtn4.setVisibility(View.VISIBLE);
                     ncrBtn4.setText("(02) 4071230");
-                    department="Bureau of Fire Protection";
+                    ncrDept="Bureau of Fire Protection";
                 }  else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("PNP Hotline Patrol")){
                     ncrBtn1.setText("117");
                     ncrBtn2.setVisibility(View.INVISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="PNP Hotline Patrol";
+                    ncrDept="PNP Hotline Patrol";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("DOTC")){
                     ncrBtn1.setText("7890");
                     ncrBtn2.setVisibility(View.VISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn2.setText("09188848484");
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="DOTC";
+                    ncrDept="DOTC";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("MMDA Metrobase")){
                     ncrBtn1.setText("8185150");
                     ncrBtn2.setVisibility(View.INVISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="MMDA Metrobase";
+                    ncrDept="MMDA Metrobase";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("MMDA Flood Control")){
                     ncrBtn1.setText("8824177");
                     ncrBtn2.setVisibility(View.VISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn2.setText("8820925");
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="MMDA Flood Control";
+                    ncrDept="MMDA Flood Control";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("DPWH")){
                     ncrBtn1.setText("(02) 3043713");
                     ncrBtn2.setVisibility(View.INVISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="DPWH";
+                    ncrDept="DPWH";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Red Cross")){
                     ncrBtn1.setText("143");
                     ncrBtn2.setVisibility(View.VISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn2.setText("(02) 9111876");
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="Red Cross";
+                    ncrDept="Red Cross";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("PAGASA")){
                     ncrBtn1.setText("(02) 4338526");
                     ncrBtn2.setVisibility(View.INVISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="PAGASA";
+                    ncrDept="PAGASA";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Philippine Coast Guard")){
                     ncrBtn1.setText("(02) 5273877");
                     ncrBtn2.setVisibility(View.VISIBLE);
@@ -150,13 +151,13 @@ public class EmergencyHotlines2 extends AppCompatActivity {
                     ncrBtn2.setText("(02) 5278481");
                     ncrBtn3.setText("09177243682");
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="Philippine Coast Guard";
+                    ncrDept="Philippine Coast Guard";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("DOH")){
                     ncrBtn1.setText("7111001");
                     ncrBtn2.setVisibility(View.INVISIBLE);
                     ncrBtn3.setVisibility(View.INVISIBLE);
                     ncrBtn4.setVisibility(View.INVISIBLE);
-                    department="DOH";
+                    ncrDept="DOH";
                 }
             }
 
@@ -174,31 +175,31 @@ public class EmergencyHotlines2 extends AppCompatActivity {
                     nearbyBtn1.setText("4946667");
                     nearbyBtn2.setVisibility(View.INVISIBLE);
                     nearbyBtn3.setVisibility(View.INVISIBLE);
-                    department="Bonifacio Fire Department";
+                    nearbyDept="Bonifacio Fire Department";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Taguig Fire Department")){
                     nearbyBtn1.setText("8370704");
                     nearbyBtn2.setVisibility(View.VISIBLE);
                     nearbyBtn3.setVisibility(View.VISIBLE);
                     nearbyBtn2.setText("5423695");
                     nearbyBtn3.setText("8374496");
-                    department="Taguig Fire Department";
+                    nearbyDept="Taguig Fire Department";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Makati Fire Department")){
                     nearbyBtn1.setText("8185150");
                     nearbyBtn2.setVisibility(View.INVISIBLE);
                     nearbyBtn3.setVisibility(View.INVISIBLE);
-                    department="Makati Fire Department";
+                    nearbyDept="Makati Fire Department";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Pasig Fire Department")){
                     nearbyBtn1.setText("6411939");
                     nearbyBtn2.setText("6412815");
                     nearbyBtn2.setVisibility(View.VISIBLE);
                     nearbyBtn3.setVisibility(View.INVISIBLE);
-                    department="Pasig Fire Department";
+                    nearbyDept="Pasig Fire Department";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Pasay Fire Department")){
                     nearbyBtn1.setText("8442120");
                     nearbyBtn2.setText("8436523");
                     nearbyBtn2.setVisibility(View.VISIBLE);
                     nearbyBtn3.setVisibility(View.INVISIBLE);
-                    department="Pasay Fire Department";
+                    nearbyDept="Pasay Fire Department";
                 }
             }
 
@@ -213,16 +214,16 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Police")){
                     localBtn.setText("6428235");
-                    department="Police";
+                    locDept="Local Police";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Fire")){
                     localBtn.setText("6411365");
-                    department="Fire";
+                    locDept="Local Fire";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Rescue")){
                     localBtn.setText("6425159");
-                    department="Rescue";
+                    locDept="Local Rescue";
                 } else if(parent.getItemAtPosition(position).toString().equalsIgnoreCase("Barangay Poblacion")){
                     localBtn.setText("6415502");
-                    department="Barangay Poblacion";
+                    locDept="Barangay Poblacion";
                 }
             }
 
@@ -238,8 +239,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = localBtn.getText().toString();
+                dept= localSpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -247,8 +248,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = nearbyBtn1.getText().toString();
+                dept=nearbySpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -256,8 +257,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = nearbyBtn2.getText().toString();
+                dept=nearbySpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -265,8 +266,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = nearbyBtn3.getText().toString();
+                dept=nearbySpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -274,8 +275,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = ncrBtn1.getText().toString();
+                dept=ncrSpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -283,8 +284,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = ncrBtn2.getText().toString();
+                dept=ncrSpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -292,8 +293,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = ncrBtn3.getText().toString();
+                dept=ncrSpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -301,8 +302,8 @@ public class EmergencyHotlines2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 telNum = ncrBtn4.getText().toString();
+                dept=ncrSpn.getSelectedItem().toString();
                 StartCall(telNum);
-                dept=department;
             }
         });
 
@@ -314,8 +315,6 @@ public class EmergencyHotlines2 extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(EmergencyHotlines2.this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
-        Database db = new Database(this);
 
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
@@ -330,10 +329,10 @@ public class EmergencyHotlines2 extends AppCompatActivity {
         else
             chk = "AM";
 
-        final String currDate = ""+month+"/"+day+"/"+year+"\n"+hour+":"+minutes+" "+chk;
+        final String currDate = ""+month+"/"+day+"/"+year;
+        final String currTime = hour+":"+minutes+" "+chk;
 
-
-        boolean insCont = db.insertCall(telNum, dept, currDate);
+        boolean insCont = db.insertCall(telNum, dept, currDate, currTime);
         if(insCont)
             Toast.makeText(this, "inserted", Toast.LENGTH_LONG).show();
         else

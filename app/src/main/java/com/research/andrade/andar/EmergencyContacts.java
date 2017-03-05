@@ -49,7 +49,6 @@ public class EmergencyContacts extends AppCompatActivity {
         addContBtn = (ImageButton)findViewById(R.id.imgBtnAddCont);
         addFrmPhBtn = (Button)findViewById(R.id.btnAddFrPhone);
 
-
         addFrmPhBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

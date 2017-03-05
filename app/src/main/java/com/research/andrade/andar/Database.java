@@ -28,7 +28,8 @@ public class Database extends SQLiteOpenHelper {
     public static final String CCol1 = "id";
     public static final String CCol2 = "contact";
     public static final String CCol3 = "department";
-    public static final String CCol4 = "orasan";
+    public static final String CCol4 = "araw";
+    public static final String CCol5 = "oras";
 
 
     public Database(Context context) {
@@ -40,7 +41,7 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("create table "+QRTableName+" (qr BLOB)");
         db.execSQL("create table "+EmContTableName+" (name TEXT, number TEXT)");
         db.execSQL("create table "+MessTableName+" (id INTEGER PRIMARY KEY, body TEXT, receiver TEXT, oras TEXT, remarks TEXT)");
-        db.execSQL("create table "+CallTableName+" (id INTEGER PRIMARY KEY, contact TEXT, department TEXT, orasan TEXT)");
+        db.execSQL("create table "+CallTableName+" (id INTEGER PRIMARY KEY, contact TEXT, department TEXT, araw TEXT, oras TEXT)");
     }
 
     @Override
@@ -66,12 +67,13 @@ public class Database extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean insertCall(String contact, String dept, String orasan){
+    public boolean insertCall(String contact, String dept,String araw, String oras){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cont = new ContentValues();
-        cont.put(MCol2, contact);
-        cont.put(MCol3, dept);
-        cont.put(MCol4, orasan);
+        cont.put(CCol2, contact);
+        cont.put(CCol3, dept);
+        cont.put(CCol4, araw);
+        cont.put(CCol5, oras);
         long res = db.insert(CallTableName, null, cont);
         if(res == -1)
             return false;
