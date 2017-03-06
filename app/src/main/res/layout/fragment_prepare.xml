@@ -18,7 +18,7 @@
 
 
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light"
@@ -29,13 +29,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="#fff"
-            >
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
 
         <TextView
             android:text="Prepare for Natural Disasters"
@@ -46,16 +41,6 @@
             android:padding="5dp"
             android:textStyle="normal|bold"
             android:layout_marginBottom="10dp" />
-
-        </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-
-
 
         <Button
                     android:text="@string/Earthquake"
@@ -72,13 +57,6 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:layout_marginBottom="10dp" />
-
-    </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
 
             <Button
                 android:text="@string/Fire"
@@ -97,15 +75,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp" />
 
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
             <Button
                 android:text="@string/Flood"
                 android:scaleType="fitXY"
@@ -122,16 +91,6 @@
                 android:drawablePadding="25dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp" />
-
-
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
 
             <Button
                 android:text="@string/Landslide"
@@ -151,14 +110,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp" />
 
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
             <Button
                 android:text="@string/Tsunami"
                 android:scaleType="fitXY"
@@ -177,13 +128,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp" />
 
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
             <Button
                 android:text="@string/Typhoon"
                 android:scaleType="fitXY"
@@ -200,14 +144,6 @@
                 android:background="@android:color/transparent"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
 
             <Button
                 android:text="@string/Volcano"
@@ -226,10 +162,7 @@
                 android:layout_marginTop="10dp"
                  />
 
-
-        </TableRow>
-
-        </TableLayout>
+        </LinearLayout>
 
     </ScrollView>
 

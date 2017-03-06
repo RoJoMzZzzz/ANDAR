@@ -125,17 +125,21 @@
                 android:hint="If others, please specify here"
                 android:gravity="top"
                 android:enabled="false"
-                android:layout_height="150dp" />
+                android:layout_height="150dp"
+                android:background="@drawable/edt_back"
+                android:padding="8dp" />
 
             <Button
-                android:text="Send Alert Message"
+                android:id="@+id/btnSendEm"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/btnSendEm"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:drawableLeft="@android:drawable/ic_menu_send"
                 android:drawablePadding="8dp"
-                android:layout_gravity="center" />
+                android:padding="8dp"
+                android:text="Send Alert Message"
+                 />
 
         </LinearLayout>
     </ScrollView>

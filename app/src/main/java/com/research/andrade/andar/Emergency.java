@@ -20,6 +20,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.logging.Handler;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -130,9 +132,9 @@ public class Emergency extends Fragment {
                     screenFlashlight.setChecked(false);
                     strobeFlashlight.setChecked(true);
                     Toast.makeText(getActivity(), "Strobe Flashlight", Toast.LENGTH_SHORT).show();
-                    //blinkFlash();
-                } //else
-                    //turnOffFlash();
+                    //blinkFlash2();
+                } else
+                    turnOffFlash();
             }
         });
 
@@ -301,6 +303,7 @@ public class Emergency extends Fragment {
     }
 
 
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -342,6 +345,8 @@ public class Emergency extends Fragment {
             camera = null;
         }
     }
+
+
 
 }
 

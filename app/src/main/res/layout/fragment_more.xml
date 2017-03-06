@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -24,13 +24,9 @@
             android:divider="?android:attr/dividerHorizontal"
             android:stretchColumns="*"
             android:padding="10dp"
-
+            android:orientation="vertical"
             >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
             <Button
                 android:id="@+id/btnTracker"
                 android:layout_width="match_parent"
@@ -43,12 +39,6 @@
                 android:padding="5dp"
                 />
 
-        </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnQrCodeScanner"
                     android:layout_width="match_parent"
@@ -61,12 +51,6 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnMessageLog"
                     android:layout_width="match_parent"
@@ -79,12 +63,6 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnCallLog"
                     android:layout_width="match_parent"
@@ -97,12 +75,7 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnRate"
                     android:layout_width="match_parent"
@@ -115,12 +88,6 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnReferences"
                     android:layout_width="match_parent"
@@ -133,12 +100,6 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnAbout"
                     android:layout_width="match_parent"
@@ -151,12 +112,6 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <Button
                     android:id="@+id/btnExit"
                     android:layout_width="match_parent"
@@ -169,9 +124,8 @@
                     android:padding="5dp"
                     />
 
-            </TableRow>
 
-        </TableLayout>
+        </LinearLayout>
 
     </ScrollView>
 
